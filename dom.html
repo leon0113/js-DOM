@@ -10,6 +10,12 @@
         /* #second-title {
             background-color: rgba(255, 255, 0, 0.4);
         } */
+        /* .blog {
+            border: solid 2px orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
     </style>
 </head>
 
@@ -18,25 +24,34 @@
         <h1>Welcome to my blog</h1>
     </header>
     <main>
-        <section>
-            <article>
-                <h3>My Awesome Bog-1</h3>
+        <section id="blogs" class="blogs">
+            <header>
+                <h2>Blogs list</h2>
+                <ul id="blog-list">
+                    <li>blog-1</li>
+                    <li>blog-2</li>
+                    <li>blog-3</li>
+                    <li>blog-4</li>
+                </ul>
+            </header>
+            <article class="blog">
+                <h3>My Awesome Blog-1</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, error culpa numquam repellat quam
                     dignissimos omnis. Sed quos facere expedita mollitia dignissimos vel, asperiores, suscipit excepturi
                     ea architecto, odit iusto.</p>
             </article>
-            <article>
-                <h3 id="second-title">My Awesome Bog-2</h3>
+            <article id="second-blog" class="blog">
+                <h3 id="second-title">My Awesome Blog-2</h3>
                 <p>Tenetur sequi harum adipisci corporis earum ad eius laudantium aliquid ducimus voluptates sapiente,
                     dolorum voluptate beatae aperiam hic delectus numquam a laborum provident dolore. Eos eaque
                     laboriosam adipisci impedit fuga?</p>
             </article>
-            <article>
-                <h3 id="third-title">My Awesome Bog-3</h3>
+            <article class="blog">
+                <h3 id="third-title">My Awesome Blog-3</h3>
                 <p>Similique iste nisi necessitatibus. Officia cumque, sit ullam incidunt porro totam. Tenetur quae
                     temporibus fuga asperiores ex. Eaque, nam dolorem nihil suscipit hic enim. Reprehenderit voluptates
                     atque eum tempore blanditiis?</p>
-                <h3>My Awesome Bog-4</h3>
+                <h3>My Awesome Blog-4</h3>
                 <p>Similique iste nisi necessitatibus. Officia cumque, sit ullam incidunt porro totam. Tenetur quae
                     temporibus fuga asperiores ex. Eaque, nam dolorem nihil suscipit hic enim. Reprehenderit voluptates
                     atque eum tempore blanditiis?</p>
@@ -65,6 +80,54 @@
         third.style.backgroundColor = "blue";
         third.style.padding = '10px';
         third.style.margin = '20px';
+
+
+        // create and add element
+
+        // Step 1 : creating the element
+        const newLi = document.createElement('li');
+        // Step 2 : Adding text
+        newLi.innerText = 'Blog 5';
+        // Step 3 : Where to  add the element
+        const ul = document.getElementById('blog-list');
+        //Step 4 : Append new element to parent tag
+        ul.appendChild(newLi);
+
+        //Add article 
+        const newArticle = document.createElement('article');
+        newArticle.classList.add('blog');
+        /* const h3 = document.createElement('h3');
+        h3.innerText = 'My awesome Blog - 5';
+        const p = document.createElement('p');
+        p.innerText = 'lorem30uioehguitrwhsieurhgiheoihrtihertightethgugheaqvbuijkaqehehyrgeiuhnjgeutijgehjrfgreoiugieurhjgiuhifduhsjiwehtgruhjerfgiuehgiuehiehgiue';
+        newArticle.appendChild(h3);
+        newArticle.appendChild(p);*/
+        // parent of article
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(newArticle);
+
+        newArticle.innerHTML = `
+        <h3>My Awesome Blog-6 </h3>
+                <p>Similique iste nisi necessitatibus. Officia cumque, sit ullam incidunt porro totam. Tenetur quae
+                    temporibus fuga asperiores ex. Eaque, nam dolorem nihil suscipit hic enim. Reprehenderit voluptates
+                    atque eum tempore blanditiis?</p>
+        `;
+
+
+
+
+
+
+        // explore getElementsByClassName
+        const blogs = document.getElementsByClassName('blog');
+        for (const blog of blogs) {
+            blog.style.border = 'solid 2px orange';
+            blog.style.borderRadius = '5px';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+        }
+
+
 
     </script>
 </body>
