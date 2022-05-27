@@ -87,7 +87,9 @@
         // Step 1 : creating the element
         const newLi = document.createElement('li');
         // Step 2 : Adding text
-        newLi.innerText = 'Blog 5';
+        newLi.innerHTML = `
+        <h5>List Item-5*</h5>
+        `;
         // Step 3 : Where to  add the element
         const ul = document.getElementById('blog-list');
         //Step 4 : Append new element to parent tag
